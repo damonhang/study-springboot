@@ -1,4 +1,4 @@
-package com.damon.study.springboot.bean;
+package com.damon.study.springboot.test.bean;
 
 
 import java.util.regex.Pattern;

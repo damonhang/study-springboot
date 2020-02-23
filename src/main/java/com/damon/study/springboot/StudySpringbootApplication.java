@@ -1,18 +1,15 @@
 package com.damon.study.springboot;
 
-import com.damon.study.springboot.listener.SimpleListener;
+import com.damon.study.springboot.test.listener.ApplicationCoreTestListener;
 import java.util.Arrays;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.boot.Banner;
 import org.springframework.boot.Banner.Mode;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.ApplicationEvent;
-import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
+@EnableAspectJAutoProxy
 public class StudySpringbootApplication {
 
 	public static void main(String[] args) {
@@ -21,9 +18,10 @@ public class StudySpringbootApplication {
 				.sources(StudySpringbootApplication.class)
 				//.child(Application.class)
 				.bannerMode(Mode.OFF)
-				.listeners(new SimpleListener())
+				.listeners(new ApplicationCoreTestListener())
 				.run(args);
 		applicationContext.registerShutdownHook();
+//		applicationContext.addBeanFactoryPostProcessor();
 	}
 
 }

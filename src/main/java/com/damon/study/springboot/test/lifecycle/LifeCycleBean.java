@@ -13,20 +13,22 @@ public class LifeCycleBean implements SmartLifecycle {
   private Logger logger= LoggerFactory.getLogger(LifeCycleBean.class);
 
   private boolean startDone=false;
+  private boolean isRunning = false;
 
   @Override
   public void start() {
     System.out.println("LifeCycleBean");
-    startDone=true;
+    isRunning = true;
   }
 
   @Override
   public void stop() {
-
+    System.out.println("stop(Runnable)");
+    isRunning = false;
   }
 
   @Override
   public boolean isRunning() {
-    return true;
+    return isRunning;
   }
 }

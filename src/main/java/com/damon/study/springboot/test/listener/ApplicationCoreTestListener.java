@@ -1,4 +1,4 @@
-package com.damon.study.springboot.listener;
+package com.damon.study.springboot.test.listener;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 
-public class SimpleListener implements ApplicationContextAware, ApplicationListener {
+public class ApplicationCoreTestListener implements ApplicationContextAware, ApplicationListener {
   private ApplicationContext applicationContext;
 
   @Override
